@@ -1,0 +1,199 @@
+{% extends 'base.html' %}
+
+{% block title %}About Us - Samtse Ferro Alloy Limited{% endblock %}
+
+{% load static %}
+{% block content %}
+<!-- Header Start -->
+<div class="container-fluid bg-breadcrumb">
+    <div class="container text-center py-5" style="max-width: 900px;">
+        <h3 class="text-white display-3 mb-4 ">About Us</h3>
+            <ol class="breadcrumb justify-content-center mb-0">
+                <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                <li class="breadcrumb-item active text-primary">About</li>
+            </ol>
+    </div>
+</div>
+<!-- Header End -->
+
+
+<!-- About Start -->
+<div class="container-fluid about py-5">
+    <div class="container py-5">
+        <div class="section-title mb-0">
+            <div class="sub-style px-3 mb-0">
+                <h2 class="sub-title pe-3 mb-0">About BMML</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid about">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-7 ">
+                <div class="section-title text-start mb-5">
+                    <h4 class="sub-title pe-3 mb-0">Company Background</h4>
+                    <p class="my-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat deleniti amet
+                        at atque sequi quibusdam cumque itaque repudiandae temporibus, eius nam mollitia voluptas
+                        maxime veniam necessitatibus saepe in ab? Repellat!</p>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                {% for home in home %}
+                <div class="about-img">
+                    <img src="{{home.home_image.url}}" class="img-fluid rounded h-100 w-100" style="object-fit: cover;" alt="Image">
+                </div>
+                {%endfor%}
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<!-- Production capacity -->
+<div class="container my-3">
+    <h4 class="sub-title pe-3 mb-0">Production Capacity</h4>
+    <div class="row">
+        <p class="my-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat deleniti amet
+            at atque sequi quibusdam cumque itaque repudiandae temporibus, eius nam mollitia voluptas
+            maxime veniam necessitatibus saepe in ab? Repellat!</p>
+    </div>
+</div>
+<!-- Statistics Start -->
+<div class="container mb-5">
+    <div class="row">
+        {% for stats in stats %}
+        <div class="col-md-9 col-lg-9 col-xl-4">
+            <div class="card bg-c-red order-card">
+                <div class="card-block">
+                    <h2 class="text-right text-white"><img class="img-fluid" src="{% static 'APP/img/icons/onehour.png' %}"><span>{{stats.production_hour}}</span></h2>
+                    <p class="m-b-0">Production/Hour</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9 col-lg-9 col-xl-4">
+            <div class="card bg-c-red order-card">
+                <div class="card-block">
+                    <h2 class="text-right text-white"><img class="img-fluid" src="{% static 'APP/img/icons/oneday.png' %}"><span>{{stats.production_day}}</span></h2>
+                    <p class="m-b-0">Production/Day</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9 col-lg-9 col-xl-4">
+            <div class="card bg-c-red order-card">
+                <div class="card-block">
+                    <h2 class="text-right text-white"><img class="img-fluid" src="{% static 'APP/img/icons/oneyear.png' %}"><span>{{stats.production_year}}</span></h2>
+                    <p class="m-b-0">Production/Annum</p>
+                </div>
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+</div>
+<div class="container-fluid d-flex justify-content-center mb-5">
+    <a class="btn btn-primary rounded-pill text-white py-3 px-5" href="#">More Details</a>
+</div>
+<!-- Statistics End -->
+
+<!-- Raw Materials -->
+<div class="container my-3">
+    <h4 class="sub-title pe-3 mb-0">Raw Materials Used</h4>
+</div>
+<br><br><br><br>
+{% if raw %}
+{% for item in raw %}
+{% if forloop.counter0|divisibleby:2 %}
+<div class="container-fluid about mb-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-7 order-lg-2">
+                <div class="section-title text-start mb-5">
+                    <p class="my-3">{{ item.description }}</p>
+                </div>
+            </div>
+            <div class="col-lg-5 order-lg-1">
+                <div class="about-img">
+                    <img src="{{ item.image.url }}" class="img-fluid rounded h-100 w-100" style="object-fit: cover;"
+                        alt="Image">
+                    <div class="text-center">
+                        <h2>{{ item.name }}</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% else %}
+<div class="container-fluid about mb-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-7">
+                <div class="section-title text-start mb-5">
+                    <p class="my-3">{{ item.description }}</p>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="about-img">
+                    <img src="{{ item.image.url }}" class="img-fluid rounded h-100 w-100" style="object-fit: cover;"
+                        alt="Image">
+                    <div class="text-center">
+                        <h2>{{ item.name }}</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+{% endfor %}
+{% else %}
+<p>No raw materials available.</p>
+{% endif %}
+<br><br>
+<!--End of Raw Materials-->
+
+<!-- About End -->
+
+<!-- Team Start -->
+<div class="container my-5">
+    <h4 class="sub-title pe-3 mb-0">Management</h4>
+</div>
+<div class="container-fluid team py-5">
+    <div class="container py-5">
+        <div class="row g-4 justify-content-center">
+            {% for teams in team %}
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="team-item rounded">
+                    <div class="team-img rounded-top h-100">
+                        <img src="{{ teams.image.url}}" class="img-fluid rounded-top w-100" alt="">
+                        <div class="team-icon d-flex justify-content-center">
+                            {% if teams.facebook %}
+                            <a class="btn btn-square btn-primary text-white rounded-circle mx-1"
+                                href="{{ teams.facebook }}"><i class="fab fa-facebook-f"></i></a>
+                            {% endif %}
+                            {% if teams.email %}
+                            <a class="btn btn-square btn-primary text-white rounded-circle mx-1"
+                                href="mailto:{{ teams.email }}"><i class="fas fa-envelope"></i></a>
+                            {% endif %}
+                            {% if teams.linkedin %}
+                            <a class="btn btn-square btn-primary text-white rounded-circle mx-1"
+                                href="{{ teams.linkedin }}"><i class="fab fa-linkedin-in"></i></a>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="team-content text-center border border-primary border-top-0 rounded-bottom p-4">
+                        <h5>{{teams.name}}</h5>
+                        <p class="mb-0">{{teams.role}}</p>
+                    </div>
+                </div>
+            </div>
+            {%endfor%}
+        </div>
+        
+    </div>
+</div>
+<!-- Team End -->
+ <br><br><br><br><br><br>
+
+{% endblock %}

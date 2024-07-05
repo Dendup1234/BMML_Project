@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact Us- Samtse Ferro Alloy Limited{% endblock %}
+
+
+{% block content %}
+<!-- Header Start -->
+<div class="container-fluid bg-breadcrumb">
+    <div class="container text-center py-5" style="max-width: 900px;">
+        <h3 class="text-white display-3 mb-4 ">Contact Us</h1>
+            <ol class="breadcrumb justify-content-center mb-0 ">
+                <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                <li class="breadcrumb-item active text-primary">Contact Us</li>
+            </ol>
+    </div>
+</div>
+<!-- Header End -->
+
+<!--Contact Us start-->
+
+<div class="container-fluid about py-5">
+    <div class="container py-5">
+        <div class="section-title mb-0">
+            <div class="sub-style px-3 mb-0">
+                <h2 class="sub-title pe-3 mb-0">Contact Us</h2>
+            </div>
+        </div>
+        <div class="row">
+            <p class="my-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat deleniti amet
+                at atque sequi quibusdam cumque itaque repudiandae temporibus, eius nam mollitia voluptas
+                maxime veniam necessitatibus saepe in ab? Repellat!</p>
+        </div>
+    </div>
+</div> 
+<!--Contact Numbers-->
+{% for team in team %}
+    {% if team.role == 'Head Officer' %}
+        <div class="container-fluid mx-5">
+            <div class="row align-items-center">
+                <div class="col-md-5 mb-5 mx-5">
+                    <h4 class="sub-title pe-3 mb-0">{{ team.role }}</h4>
+                    <div class="row">
+                        <div class="d-flex flex-column">
+                            {% if team.phone %}
+                                <a href="tel:{{ team.phone }}" class="me-4"><i class="fas fa-phone-alt text-primary me-2"></i>{{ team.phone }}</a>
+                            {% endif %}
+                            {% if team.email %}
+                                <a href="mailto:{{ team.email }}" class="me-0"><i class="fas fa-envelope text-primary me-2"></i>{{ team.email }}</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endfor %}
+<!-- Location -->
+
+ <div class="container-fluid">
+    <div class="section-title mb-5">
+        <div class="sub-style px-3 mb-0">
+            <h2 class="sub-title pe-3 mb-0">Location</h2>
+        </div>
+    </div>
+    <div class="row mb-5">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3557.4752525163!2d89.04529017285378!3d26.92014407664267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e3e9876433fac3%3A0x767869e4f59f58dc!2sBMML%20Ferro%20Alloys!5e0!3m2!1sen!2sbt!4v1720112303218!5m2!1sen!2sbt" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+ </div>
+
+<!--End Location-->
+
+<!--End Contact Numbers-->
+
+
+
+<!--End Contact Us -->
+
+
+<!--Career Ends-->
+{% endblock %}

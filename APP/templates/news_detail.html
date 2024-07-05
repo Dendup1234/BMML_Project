@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}Product - Samtse Ferro Alloy Limited{% endblock %}
+
+{% load static %}
+{% block content %}
+<!-- Header Start -->
+<div class="container-fluid bg-breadcrumb">
+    <div class="container text-center py-5" style="max-width: 900px;">
+        <h1 class="text-white display-3 mb-4 ">News</h1>
+        <ol class="breadcrumb justify-content-center mb-0 ">
+            <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+            <li class="breadcrumb-item active text-primary">News</li>
+        </ol>
+    </div>
+</div>
+<!-- Header End -->
+<!--Products start-->
+<div class="container my-5">
+    <div class="row align-items-center">
+        <img src="{{news.image.url}}" class="img-fluid">
+    </div>
+</div>
+
+{% for detail in news.details.all %}
+<div class="container my-5">
+    <h4 class="sub-title pe-3 mb-0 my-5">{{detail.title}}</h4>
+</div>
+<div class="container-fluid about">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-10 ">
+                <div class="section-title text-start mb-5">
+                    <p class="my-3">{{detail.description}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{%endfor%}
+
+<!--Products Ends-->
+{% endblock %}

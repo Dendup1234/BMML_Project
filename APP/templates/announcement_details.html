@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}Environmental - Samtse Ferro Alloy Limited{% endblock %}
+{% load static %}
+{% block content %}
+<!-- Header Start -->
+<div class="container-fluid bg-breadcrumb">
+    <div class="container text-center py-5" style="max-width: 900px;">
+        <h3 class="text-white display-3 mb-4 ">Annoucements</h1>
+            <ol class="breadcrumb justify-content-center mb-0 ">
+                <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                <li class="breadcrumb-item active text-primary">Annoucements</li>
+            </ol>
+    </div>
+</div>
+<!-- Header End -->
+
+<!--Environmental start-->
+<div class="container my-5">
+    <h4 class="sub-title pe-3 mb-0 my-5">Hiring Process</h4>
+</div>
+<div class="container-fluid about">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 ">
+                <h5 class="my-3">{{announcement.hiring_process}}</h5>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container my-5">
+    <h4 class="sub-title pe-3 mb-5 my-5">Requirements</h4>
+    {% for requirement in announcement.requirement.all %}
+    <p class="text-secondary"><img src="{% static 'APP/img/icons/bulletpoint.png' %}"
+            class="bulletpoint">{{requirement.requirement}}</p>
+    {%endfor%}
+</div>
+
+
+<!--Environmental Ends-->
+<br><br><br><br><br><br><br><br>
+{% endblock %}
