@@ -9,6 +9,7 @@ class Homepage(models.Model):
         return self.hero_title
 
 class Statistic(models.Model):
+    tree_image = models.ImageField(upload_to='image/',blank=True,null=True)
     established = models.CharField(max_length=200)
     client = models.CharField(max_length=200)
     production_hour = models.IntegerField()
@@ -81,3 +82,10 @@ class Requirement(models.Model):
 
     def __str__ (self):
         return f'requirement for {self.announcement.announcement}'
+
+class Reports(models.Model):
+    title = models.CharField(max_length=255)
+    upload = models.FileField(upload_to='uploads/')
+
+    def __str__(self):
+        return self.title

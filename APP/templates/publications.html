@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %}Product -BMML{% endblock %}
+
+{% load static %}
+{% block content %}
+<!-- Header Start -->
+<div class="container-fluid bg-breadcrumb">
+    <div class="container text-center py-5" style="max-width: 900px;">
+        <h1 class="text-white display-3 mb-4 ">Publications</h1>
+        <ol class="breadcrumb justify-content-center mb-0 ">
+            <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+            <li class="breadcrumb-item active text-primary">Publications</li>
+        </ol>
+    </div>
+</div>
+<!-- Header End -->
+<!--Publicaitons start-->
+<div class="container my-5">
+    <h4 class="sub-title pe-3 mb-0 my-5">Reports</h4>
+</div>
+<div class="container-fluid about">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-10 ">
+                {% for document in report %}
+                <li>
+                    
+                    {% if document.upload %}
+                    <a href="{{ document.upload.url }}">{{ document.title }}</a>
+                    {% endif %}
+                </li>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-5">
+        <h4 class="sub-title pe-3 mb-0 my-5">Tenure</h4>
+    </div>
+    <div class="container-fluid about">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-10 ">
+                    <div class="section-title text-start mb-5">
+                        <p class="my-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat deleniti amet
+                            at atque sequi quibusdam cumque itaque repudiandae temporibus, eius nam mollitia voluptas
+                            maxime veniam necessitatibus saepe in ab? Repellat!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Publications Ends-->
+    {% endblock %}

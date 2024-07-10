@@ -1,5 +1,6 @@
 from django.shortcuts import render,get_object_or_404
 from .models import *
+from django.db.models import Q
 # Create your views here.
 def index(request):
     home = Homepage.objects.all()
@@ -31,11 +32,13 @@ def about(request):
     stats = Statistic.objects.all()
     raw = Raw_material.objects.all()
     team = Team_Member.objects.all()
+    board_team = Team_Member.objects.filter(Q(role='Head Officer') | Q(role='CEO') | Q(role='Manager'))
     context ={
         'home': home,
         'stats': stats,
         'raw': raw,
         'team': team,
+        'board': board_team,
     }
     return render (request,'about.html',context)
 
@@ -71,3 +74,11 @@ def contact(request):
         'team': team,
     }
     return render (request,'contact.html',context)
+
+def publications(request):
+    report = Reports.objects.all()
+    context ={
+        'report' : report,
+
+    }
+    return render (request,'publications.html',context)

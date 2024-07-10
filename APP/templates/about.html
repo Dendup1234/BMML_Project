@@ -51,6 +51,48 @@
 </div>
 <br>
 <br>
+
+<!--Board Management-->
+<div class="container my-5">
+    <h4 class="sub-title pe-3 mb-0">Board Management</h4>
+</div>
+<div class="container-fluid team py-5">
+    <div class="container py-5">
+        <div class="row g-4 justify-content-center">
+            {% for teams in board %}
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="team-item rounded">
+                    <div class="team-img rounded-top h-100">
+                        <img src="{{ teams.image.url}}" class="img-fluid rounded-top w-100" alt="">
+                    </div>
+                    <div class="team-content text-center border border-primary border-top-0 rounded-bottom p-4">
+                        <h5>{{teams.name}}</h5>
+                        <p class="mb-0">{{teams.role}}</p>
+                    </div>
+                </div>
+            </div>
+            {%endfor%}
+        </div>
+        
+    </div>
+<!--END-->
+
+<!--Team Tree-->
+<div class="container my-3">
+    <h4 class="sub-title pe-3 mb-5">Title</h4>
+    <div class="row mb-5">
+        {% for stats in stats %}
+        {% if stats.tree_image %}
+        <img src="{{ stats.tree_image.url }}" alt="" class="img-fluid">
+        {% else %}
+        <p>No Informations</p>
+        {%endif%}
+
+        {% endfor %}
+    </div>
+</div>
+<!-- End-->
+
 <!-- Production capacity -->
 <div class="container my-3">
     <h4 class="sub-title pe-3 mb-0">Production Capacity</h4>

@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-l!lm=!ow+%p5twfi=m3ght2^6pnl#&et=1v3@iy5@ne@zlsd^u
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -118,8 +118,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Additional locations of static files
 STATICFILES_DIRS = [
@@ -130,11 +128,25 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static/media')
-
 JAZZMIN_SETTINGS = {
     "site_title": "BMML",
     "site_brand": "BMML",
     "copyright": "BMML",
 }
+
+STATIC_URL = '/static/'
+
+MEDIA_URL = '/media/'
+
+  
+
+if DEBUG:
+
+  STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+else:
+
+  STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/media')
+BASE_DIR = Path(__file__).resolve().parent.parent

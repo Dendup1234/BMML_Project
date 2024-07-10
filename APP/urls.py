@@ -10,6 +10,6 @@ urlpatterns = [
     path('news/',views.news,name ='news'),
     path('news_detail/<int:pk>/', views.news_detail, name='news_detail'),
     path('announcements/<int:pk>/',views.announcement_detail,name='announcement_detail'),
-
+    path('publications/',views.publications,name='publications')
 
 ]

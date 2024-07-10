@@ -54,6 +54,7 @@
                     <a href="{% url 'about' %}" class="nav-item nav-link {% if request.resolver_match.url_name == 'about' %}active{% endif %}">About</a>
                     <a href="{% url 'products' %}" class="nav-item nav-link {% if request.resolver_match.url_name == 'products' %}active{% endif %}">Products</a>
                     <a href="{% url 'environmental' %}" class="nav-item nav-link {% if request.resolver_match.url_name == 'environmental' %}active{% endif %}">Environmental Concerns</a>
+                    <a href="{% url 'publications' %}" class="nav-item nav-link {% if request.resolver_match.url_name == 'publications' %}active{% endif %}">Publications</a>
                     <a href="{% url 'announcements' %}" class="nav-item nav-link {% if request.resolver_match.url_name == 'announcements' %}active{% endif %}">Announcements</a>
                     <a href="{% url 'contact' %}" class="nav-item nav-link {% if request.resolver_match.url_name == 'contact' %}active{% endif %}">Contact Us</a>
                 </div>
