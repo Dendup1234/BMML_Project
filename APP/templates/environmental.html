@@ -6,10 +6,10 @@
 <!-- Header Start -->
 <div class="container-fluid bg-breadcrumb">
     <div class="container text-center py-5" style="max-width: 900px;">
-        <h3 class="text-white display-3 mb-4 ">Environmental Concerns</h1>
+        <h3 class="text-white display-3 mb-4 "style="font-family: Arial, sans-serif;">Environmental Concerns</h1>
             <ol class="breadcrumb justify-content-center mb-0 ">
-                <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
-                <li class="breadcrumb-item active text-primary">Environmental Concerns</li>
+                <li class="breadcrumb-item"style="font-family: Arial, sans-serif;"><a href="{% url 'home' %}">Home</a></li>
+                <li class="breadcrumb-item active text-primary"style="font-family:  Playfair Display, Merriweather, Georgia, serif;">Environmental Concerns</li>
             </ol>
     </div>
 </div>
@@ -23,9 +23,12 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 ">
-                    <h5 class="my-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat deleniti amet
-                        at atque sequi quibusdam cumque itaque repudiandae temporibus, eius nam mollitia voluptas
-                        maxime veniam necessitatibus saepe in ab? Repellat!</h5>   
+                <p class="my-3" style="font-family: Arial, sans-serif;">At BMML, we are deeply committed to the philosophy of Gross
+                    National Happiness (GNH), which guides our approach to business and environmental stewardship.
+                    Preservation of the environment is a cornerstone of GNH, and we fully comply with all environmental
+                    policies set forth by the Royal Government of Bhutan.
+
+                </p>
             </div>
         </div>
     </div>
@@ -50,7 +53,7 @@
     <div class="container mb-5">
         <div class="row g-4 justify-content-center">
             {% for certificates in certificates %}
-            <div class="col-md-3 col-lg-3 col-xl-3 mb-5  mx-4" >
+            <div class="col-md-3 col-lg-3 col-xl-3 mb-5  mx-4">
                 <div class="row-cols-1 p-4 ">
                     <div class="col-12">
                         <img src="{{ certificates.image.url }}" class="img-fluid">
@@ -60,6 +63,6 @@
             {% endfor %}
         </div>
     </div>
-<!--End Certicates-->
-<br><br><br><br><br><br><br><br>
-{% endblock %}
+    <!--End Certicates-->
+    <br><br><br><br><br><br><br><br>
+    {% endblock %}

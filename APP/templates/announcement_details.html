@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}Environmental - BMML{% endblock %}
+{% block title %}Annoucements - BMML{% endblock %}
 {% load static %}
 {% block content %}
 <!-- Header Start -->
@@ -23,7 +23,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 ">
-                <h5 class="my-3">{{announcement.hiring_process}}</h5>
+                <p class="my-3" style="font-family: Arial, sans-serif;">{{announcement.hiring_process}}</p>
             </div>
         </div>
     </div>
@@ -31,7 +31,7 @@
 <div class="container my-5">
     <h4 class="sub-title pe-3 mb-5 my-5">Requirements</h4>
     {% for requirement in announcement.requirement.all %}
-    <p class="text-secondary"><img src="{% static 'APP/img/icons/bulletpoint.png' %}"
+    <p class="" style="font-family: Arial, sans-serif;"><img src="{% static 'APP/img/icons/bulletpoint.png' %}"
             class="bulletpoint">{{requirement.requirement}}</p>
     {%endfor%}
 </div>

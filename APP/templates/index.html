@@ -12,10 +12,11 @@
         <img src="{{home.hero_image.url}}" class="img-fluid w-100" alt="Image">
         <div class="carousel-caption">
             <div class="carousel-caption-content p-3">
-                <h5 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">BMML</h5>
-                <h1 class="display-1 text-white mb-4">Best Production of Ferro Silcon</h1>
-                <p class="mb-5 fs-5 text-white">Lorem Ipsum is simply dummy text of the printing and typesetting
-                    industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                <h2 class="display-1 text-white mb-4" style="font-family: Arial, sans-serif;">BMML</h2>
+                <p class="mb-5 fs-5 text-white" style="font-family: Arial, sans-serif;">Welcome to BMML
+                    Company, a leading producer of high-quality ferro
+                    silicon. Located in the heart of the industry, our state-of-the-art facility is dedicated to
+                    manufacturing ferro silicon with an annual production capacity of 27,000 tons.
                 </p>
                 <a class="btn btn-primary rounded-pill text-white py-3 px-5" href="#">More Information</a>
             </div>
@@ -25,30 +26,6 @@
 
 </div>
 <!-- Carousel End -->
-
-<!-- Majestic Quote  Start -->
-<div class="container-fluid about bg-light py-5 mb-5">
-    <div class="container py-5">
-        <div class="row g-5 align-items-center">
-            <div class="col-lg-5 ">
-                <div class="about-img pb-5 ps-5">
-                    <div class="about-img-inner">
-                        <img src="{% static 'APP/img/image/his_majesty.jpg' %}"
-                            class="img-fluid rounded-circle w-100 h-100" alt="Image">
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-7">
-                <div class="section-title text-start mb-5">
-                    <h1 class="display-3 mb-4">"Love and compassion are the truest sources of strength and
-                        resilience."</h1>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Majesty quote End -->
-
 <!-- Home page -->
 <div class="container-fluid about py-5">
     <div class="container py-5">
@@ -73,23 +50,22 @@
             </div>
             <div class="col-lg-7">
                 <div class="section-title text-start mb-5">
-                    <h1 class="display-3">Welcome to Ferro Alloy Limited Page</h1>
-                    <p class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat deleniti amet
-                        at atque sequi quibusdam cumque itaque repudiandae temporibus, eius nam mollitia voluptas
-                        maxime veniam necessitatibus saepe in ab? Repellat!</p>
+                    <h1 class="display-3" style="font-family: Arial, sans-serif;">Welcome to BMML
+                    </h1>
+                    <p class="" style="font-family: Arial, sans-serif;">Our production process is powered by two
+                        advanced furnaces, each utilizing 18 MVA of power to ensure the highest efficiency and product
+                        quality. We are committed to delivering superior ferro silicon to meet the diverse needs of our
+                        global clients, supporting various industries with our reliable and consistent supply.</p>
                     <div class="mb-4">
-                        <p class="text-secondary"><img src="{% static 'APP/img/icons/bulletpoint.png' %}"
-                                class="bulletpoint">
-                            Refresing to get
-                            such a personal touch.</p>
-                        <p class="text-secondary"><img src="{% static 'APP/img/icons/bulletpoint.png' %}"
-                                class="bulletpoint"> Duis
-                            aute irure
-                            dolor in reprehenderit in voluptate.</p>
-                        <p class="text-secondary"><img src="{% static 'APP/img/icons/bulletpoint.png' %}"
-                                class="bulletpoint"> Velit
-                            esse cillum
-                            dolore eu fugiat nulla pariatur.</p>
+                        <p class="" style="font-family: Arial, sans-serif;"><img
+                                src="{% static 'APP/img/icons/bulletpoint.png' %}" class="bulletpoint">
+                            Annual Production Capacity: 27,000 tons of ferro silicon.</p>
+                        <p class="" style="font-family: Arial, sans-serif;"><img
+                                src="{% static 'APP/img/icons/bulletpoint.png' %}" class="bulletpoint"> Power Usage:
+                            Each furnace uses 18 MVA of power.</p>
+                        <p class="" style="font-family: Arial, sans-serif;"><img
+                                src="{% static 'APP/img/icons/bulletpoint.png' %}" class="bulletpoint"> Product Quality:
+                            High-quality ferro silicon</p>
                     </div>
                 </div>
             </div>
@@ -107,9 +83,9 @@
             <div class="card bg-c-red order-card">
                 <div class="card-block">
                     <h2 class="text-right text-white"><img class="img-fluid"
-                            src="{% static 'APP/img/icons/smile.png' %}"><span>{{stat.happy_client}}</span>
+                            src="{% static 'APP/img/icons/smile.png' %}"><span>{{stat.client}}</span>
                     </h2>
-                    <p class="m-b-0">Happy Clients</p>
+                    <p class="m-b-0" style="font-family: Arial, sans-serif;">Happy Clients</p>
                 </div>
             </div>
         </div>
@@ -118,7 +94,7 @@
                 <div class="card-block">
                     <h2 class="text-right text-white"><img class="img-fluid"
                             src="{% static 'APP/img/icons/building.png' %}"><span>{{stat.established}}</span></h2>
-                    <p class="m-b-0">Established</p>
+                    <p class="m-b-0" style="font-family: Arial, sans-serif;">Established</p>
                 </div>
             </div>
         </div>
@@ -127,7 +103,7 @@
                 <div class="card-block">
                     <h2 class="text-right text-white"><img class="img-fluid"
                             src="{% static 'APP/img/icons/factory.png' %}"><span>{{stat.production_year}}</span></h2>
-                    <p class="m-b-0">Production/Annum</p>
+                    <p class="m-b-0" style="font-family: Arial, sans-serif;">Production/Annum</p>
                 </div>
             </div>
         </div>
@@ -138,46 +114,4 @@
     <a class="btn btn-primary rounded-pill text-white py-3 px-5" href="{% url 'about' %}">More Details</a>
 </div>
 <!-- Statistic End -->
-
-<!-- Blog Start -->
-<div class="container-fluid blog py-5">
-    <div class="container py-5">
-        <div class="section-title mb-5">
-            <div class="sub-style">
-                <h4 class="sub-title px-3 mb-0">Latest News</h4>
-            </div>
-        </div>
-        <div class="row g-4 justify-content-center">
-            {% for news in news %}
-            <div class="col-md-6 col-lg-6 col-xl-4">
-                <div class="blog-item rounded">
-                    <div class="blog-img">
-                        <img src="{{news.image.url}}" class="img-fluid w-100" alt="Image">
-                    </div>
-                    <div class="blog-centent p-4">
-                        <div class="d-flex justify-content-between mb-4">
-                            <p class="mb-0 text-muted"><i class="fa fa-calendar-alt text-primary"></i>{{news.date}}
-                            </p>
-                        </div>
-                        <div class="text-center">
-                            <a href="#" class="h4">{{news.headline}}</a>
-                        </div>
-
-                        <br>
-                        <div class="d-flex justify-content-center">
-                            <a href="{% url 'news_detail' news.pk %}"
-                                class="btn btn-primary rounded-pill text-white py-2 px-4 mb-1">Read More</a>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            {%endfor%}
-        </div>
-    </div>
-    <div class="container-fluid d-flex justify-content-center mb-5">
-        <a class="btn btn-primary rounded-pill text-white py-3 px-5" href="{% url 'news' %}">View More</a>
-    </div>
-</div>
-<!-- Blog End -->
 {% endblock %}

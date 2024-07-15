@@ -9,30 +9,14 @@ class Homepage(models.Model):
         return self.hero_title
 
 class Statistic(models.Model):
-    tree_image = models.ImageField(upload_to='image/',blank=True,null=True)
     established = models.CharField(max_length=200)
     client = models.CharField(max_length=200)
-    production_hour = models.IntegerField()
-    production_day = models.IntegerField()
-    production_year = models.IntegerField()
+    production_hour = models.CharField(max_length=200)
+    production_day = models.CharField(max_length=200)
+    production_year = models.CharField(max_length=200)
 
     def __str__ (self):
         return f'statistic'
-
-class News(models.Model):
-    image = models.ImageField(upload_to='image/')
-    date = models.DateField(auto_now_add=True)
-    headline = models.CharField(max_length=255)
-    
-    def __str__(self):
-        return self.headline
-
-class NewsDetail(models.Model):
-    news = models.ForeignKey(News, related_name='details', on_delete=models.CASCADE)
-    title = models.CharField(max_length=255)
-    description = models.TextField()
-    def __str__(self):
-        return self.title
 
 class Raw_material(models.Model):
     name = models.CharField(max_length=200)
@@ -89,3 +73,36 @@ class Reports(models.Model):
 
     def __str__(self):
         return self.title
+
+class Tenders(models.Model):
+    title = models.CharField(max_length=255)
+    upload = models.FileField(upload_to='uploads/')
+
+    def __str__(self):
+        return self.title
+
+class Annual_Audited_Reports(models.Model):
+    title = models.CharField(max_length=255)
+    upload = models.FileField(upload_to='uploads/')
+    def __str__(self):
+        return self.title
+
+
+
+class Admin_info(models.Model):
+    name = models.CharField(max_length=200)
+    email = models.EmailField(max_length=300,blank=True,null=True)
+    facebook = models.URLField(max_length=200,blank=True,null=True)
+    location = models.CharField(max_length=200)
+    phone_number = models.CharField(max_length=200)
+    linkedin = models.URLField(max_length=200, blank=True, null=True)
+
+    def __str__(self):
+        return self.name
+
+class Certificates_about(models.Model):
+    name = models.CharField(max_length=200)
+    image = models.ImageField(upload_to='uploads/',blank=True,null=True)
+    def __str__(self):
+        return self.name
+

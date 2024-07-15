@@ -7,10 +7,10 @@
 <!-- Header Start -->
 <div class="container-fluid bg-breadcrumb">
     <div class="container text-center py-5" style="max-width: 900px;">
-        <h3 class="text-white display-3 mb-4 ">Annoucements</h1>
+        <h3 class="text-white display-3 mb-4 " style="font-family: Arial, sans-serif;">Annoucements</h1>
             <ol class="breadcrumb justify-content-center mb-0 ">
-                <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
-                <li class="breadcrumb-item active text-primary">Announcements</li>
+                <li class="breadcrumb-item" style="font-family: Arial, sans-serif;"><a href="{% url 'home' %}">Home</a></li>
+                <li class="breadcrumb-item active text-primary" style="font-family: Arial, sans-serif;">Announcements</li>
             </ol>
     </div>
 </div>
@@ -36,7 +36,7 @@
             <div class="col-lg-7 ">
                 <div class="section-title text-start mb-5">
                     <h4 class="sub-title pe-3 mb-0">{{career.title}}</h4>
-                    <p class="my-3">{{career.description}}</p>
+                    <p class="my-3" style="font-family: Arial, sans-serif;">{{career.description}}</p>
                 </div>
             </div>
             <div class="col-lg-5">
@@ -51,24 +51,7 @@
 {%endfor%}
 
 <!--Hiring Process -->
-<div class="container-fluid about py-5">
-    <div class="container py-5">
-        <div class="section-title mb-0">
-            <div class="sub-style px-3 mb-0">
-                <h2 class="sub-title pe-3 mb-0">Hiring Process</h2>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="container my-3">
-    <h4 class="sub-title pe-3 mb-0">Hiring Process at Samtse Ferro Alloy Limited</h4>
-    <div class="row">
-        <p class="my-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat deleniti amet
-            at atque sequi quibusdam cumque itaque repudiandae temporibus, eius nam mollitia voluptas
-            maxime veniam necessitatibus saepe in ab? Repellat!</p>
 
-    </div>
-</div>
 <!--End Hiring Process -->
 
 <!--Announcements-->
@@ -76,13 +59,13 @@
     <div class="container py-5">
         <div class="section-title mb-0">
             <div class="sub-style px-3 mb-0">
-                <h2 class="sub-title pe-3 mb-0">Vacancy</h2>
+                <h2 class="sub-title pe-3 mb-0">Annoucements</h2>
             </div>
         </div>
     </div>
 </div>
 <div class="container my-3">
-    <h4 class="sub-title pe-3 mb-0">Annoucements</h4>
+    <h4 class="sub-title pe-3 mb-0">Vacancy</h4>
     <div class="row">
     </div>
 </div>
@@ -113,6 +96,28 @@
         </div>
     </div>
 </div>
+<div class="container my-3">
+    <h4 class="sub-title pe-3 mb-0">Tenders</h4>
+    <div class="row">
+    </div>
+</div>
+<div class="container-fluid about">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-10 mb-5 ">
+                {% for document in tender  %}
+            <li>
+                
+                {% if document.upload %}
+                <a href="{{ document.upload.url }}" style="font-family: Arial, sans-serif;">{{ document.title }}</a>
+                {% endif %}
+            </li>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- Blog End -->
 <br><br><br><br><br><br>
 
